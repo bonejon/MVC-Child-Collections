@@ -1,0 +1,38 @@
+﻿@model ChildBinding.Models.ChildModel
+@using ChildBinding.Helpers
+
+<tr>
+    @using (Html.BeginCollectionItem("ChildModels"))
+    {
+        <td>
+            @if (Model.ChildId == 0)
+            {
+                <input type="text" name="ChildModels[${index}].ChildId" id="ChildModels__index__ChildId" value="${ChildId}" />
+            }
+            else
+            {
+                @Html.EditorFor(m => m.ChildId)
+            }
+        </td>
+        <td>
+            @if (Model.ChildId == 0)
+            {
+                <input type="text" name="ChildModels[${index}].Description" id="ChildModels__index__Description" value="${Description}" />
+            }
+            else
+            {
+                @Html.EditorFor(m => m.Description)
+            }
+        </td>
+        <td>
+            @if (Model.ChildId == 0)
+            {
+                <input type="text" name="ChildModels[${index}].SomeOtherProperty" id="ChildModels__index__SomeOtherProperty" value="${SomeOtherProperty}" />
+            }
+            else
+            {
+                @Html.EditorFor(m => m.SomeOtherProperty)
+            }
+        </td>
+    }
+</tr>
